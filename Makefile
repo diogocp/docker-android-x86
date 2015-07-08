@@ -8,7 +8,7 @@ docker: system.tar
 	docker build -t ${IMAGE} .
 
 system.tar:
-	[ -f ${LIVECD} ] || wget '${BASE_URL}${LIVECD}'
+	[ -f ${LIVECD} ] || wget ${BASE_URL}${LIVECD}
 	7z e -y ${LIVECD} system.sfs
 	7z e -y system.sfs system.img
 	[ -d system ] || mkdir system
